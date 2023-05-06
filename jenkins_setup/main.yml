@@ -1,0 +1,5 @@
+---
+# tasks file for jenkins_setup
+  - include_tasks: java_install.yml
+  - include_tasks: maven_install.yml
+  - include_tasks: jenkins_install.yml
