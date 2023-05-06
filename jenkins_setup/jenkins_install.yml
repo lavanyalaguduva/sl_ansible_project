@@ -1,0 +1,24 @@
+---
+- name: Import jenkins key
+  apt_key:
+    url: "https://pkg.jenkins.io/debian/jenkins.io-2023.key"
+    state: present
+  become: yes
+
+- name: Add jenkins repository
+  apt_repository:
+    repo: 'deb https://pkg.jenkins.io/debian-stable binary/' 
+    state: present
+  become: yes
+
+- name: Install jenkins
+  apt:
+    name: jenkins
+    update_cache: yes
+  become: yes
+
+- name: Check jenkins is running
+  service:
+    name: jenkins
+    state: started
+... 
