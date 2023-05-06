@@ -1,0 +1,10 @@
+---
+- name: Install maven
+  become: yes
+  apt:
+    name: "{{maven_package}}"
+    state: present
+  vars:
+    maven_package:
+      - maven
+...
