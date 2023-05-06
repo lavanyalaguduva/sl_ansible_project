@@ -1,0 +1,7 @@
+---
+  - hosts: aws_ec2
+    name: Install java, maven, jenkins server on ec2
+    become: yes
+    
+    roles:
+      - jenkins_setup
